@@ -24,11 +24,9 @@
     <h1>RADIO SENSACION 96.7</h1>
   </div>
     <div data-role="content"  class="negritas">
-      <img id="mifondo" src="imagenes/fondo96.7.png" width="100%" height="100%"> 
-    
+      <img id="bg" src="imagenes/fondo96.7.png"> 
     
   	  <div id="playcontrols" align="center">
-               
           
           <a href="#" id="playbutton" onClick="html5audio.play();return false;"><img src="imagenes/playbutton.png" />
           </a> <a href="#" id="activityindicator" style="display:none" onClick="html5audio.stop();return false;"><img src="imagenes/activityindicator.gif" /></a>
@@ -54,9 +52,39 @@
 									 stopButton.style.display = 'block';
 							  }
 						
-						}
-						
+						}				
 				}
+				
+				
+function updateBackground() {
+screenWidth = $(window).width();
+screenHeight = $(window).height();
+var bg = jQuery("#bg");
+ 
+// Proporcion horizontal/vertical. En este caso la imagen es cuadrada
+ratio = 1;
+ 
+if (screenWidth/screenHeight > ratio) {
+$(bg).height("auto");
+$(bg).width("100%");
+} else {
+$(bg).width("auto");
+$(bg).height("100%");
+}
+ 
+// Si a la imagen le sobra anchura, la centramos a mano
+if ($(bg).width() > 0) {
+$(bg).css('left', (screenWidth - $(bg).width()) / 2);
+}
+}
+$(document).ready(function() {
+// Actualizamos el fondo al cargar la pagina
+updateBackground();
+$(window).bind("resize", function() {
+// Y tambien cada vez que se redimensione el navegador
+updateBackground();
+});
+});				
 		  
 
 		  
