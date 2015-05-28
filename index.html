@@ -67,9 +67,16 @@ screenHeight = $(window).height();
 var bg = jQuery("#bg");
 // Proporcion horizontal/vertical. En este caso la imagen es cuadrada
 ratio = 1;
-$(bg).width("320px");
-$(bg).height("400px");
-alert(screenwidth.tostring());
+
+	var ventana_ancho = $(window).width();
+	var ventana_alto = $(window).height();
+	ventana_ancho-=10;
+	ventana_alto-=20;
+	
+$(bg).width(ventana_ancho);
+$(bg).height(ventana_alto);
+
+
 }
 $(document).ready(function() {
 // Actualizamos el fondo al cargar la pagina
