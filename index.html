@@ -70,8 +70,12 @@ ratio = 1;
 
 	var ventana_ancho = $(window).width();
 	var ventana_alto = $(window).height();
-	ventana_ancho-=10;
-	ventana_alto-=20;
+	ventana_ancho -= 50;
+	ventana_alto -= 60;
+	alert(ventana_ancho);
+	alert(ventana_alto);
+	
+	
 	
 $(bg).width(ventana_ancho);
 $(bg).height(ventana_alto);
@@ -91,7 +95,7 @@ updateBackground();
     
 
      <div data-role="footer" data-theme="b" align="center">	 
-       <button onclick="jAlert('Sirac Broadcast Software - sirac@hotmail.com -> La FM de Ciudad Guzman S.A. de C.V.','Atención');">Acerca de</button>	   
+       <button onclick="alert('Sirac Broadcast Software - sirac@hotmail.com -> La FM de Ciudad Guzman S.A. de C.V.','Atención');">Acerca de</button>	   
 	   	   
      </div>
     
